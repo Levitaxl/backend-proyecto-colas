@@ -7,6 +7,10 @@ import {
     pool
 } from './connection.js'
 
+import {config} from 'dotenv'
+config();
+
+
 const app = express();
 const server = http.createServer(http);
 const io = new SocketServer(server, {
@@ -91,5 +95,5 @@ io.on('connection', async (socket) => {
 });
 
 
-server.listen(3001)
-console.log('Server on port', 3001)
+server.listen(process.env.PORT || 3000)
+console.log('Server on port', process.env.PORT || 3000)
