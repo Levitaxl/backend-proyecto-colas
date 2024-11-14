@@ -15,7 +15,7 @@ const app = express();
 const server = http.createServer(http);
 const io = new SocketServer(server, {
     cors: {
-        origin: '*',
+        origin: 'http://localhost:3000',
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['*'],
         credentials: true
