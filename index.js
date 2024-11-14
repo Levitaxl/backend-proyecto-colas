@@ -32,7 +32,9 @@ io.on('connection', socket =>{
             if(ci == '123' && id == '1'){
                 response = {
                     'isUser' : true,
-                    'responseFase': 1
+                    'responseFase': 1,
+                    'nombre' : "Hermes",
+                    'apellido' : "Sanchez"
                 }
             }
 
@@ -41,10 +43,26 @@ io.on('connection', socket =>{
             socket.broadcast.emit('message', jsonString)
         }
 
-        console.log(data.fase)
-
-      //  socket.broadcast.emit('message', data)
-     //   console.log(data)
+       else  if(fase==2){
+            const ci = data.ci;
+            const id = data.id;
+            const selectedReason = data.selectedReason
+            const peticionExist = true;
+            console.log(selectedReason)
+            //asumismo que existe
+            if(peticionExist){
+                let  response = {
+                    'peticionExist' : peticionExist,
+                    'responseFase': 2,
+                    'id'            : 123,
+                    "letra"         : "h"
+                }
+                const jsonString = JSON.stringify(response);
+                socket.broadcast.emit('message', jsonString)
+            }
+            else{
+            }
+        }
     }))
 })
 
