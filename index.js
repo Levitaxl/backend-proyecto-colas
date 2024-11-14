@@ -15,7 +15,7 @@ const app = express();
 const server = http.createServer(http);
 const io = new SocketServer(server, {
     cors: {
-        origin: 'http://localhost:3000',
+        origin: '*',
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['*'],
         credentials: true
@@ -42,6 +42,7 @@ async function handleFase1(data) {
 }
 
 async function handleFase2(parsedData) {
+    let response = {}
     const {ci,selectedReason} = parsedData;
 
     const peticion = await pool.query('SELECT * FROM cola WHERE cedula = $1 AND tipo_cola = $2', [ci, selectedReason]);
