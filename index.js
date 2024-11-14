@@ -69,6 +69,8 @@ async function handleFase2(parsedData) {
             letra,
         };
     }
+
+    return response
 }
 
 io.on('connection', async (socket) => {
