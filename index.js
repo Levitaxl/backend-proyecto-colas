@@ -71,15 +71,24 @@ async function handleFase2(parsedData) {
 }
 
 io.on('connection', async (socket) => {
+    console.log('socket connected')
     socket.on('message', async (data) => {
         try {
+            console.log('message socket')
+
             const parsedData = JSON.parse(data);
             const {fase} = parsedData;
 
             let response;
 
-            if (fase === 1)       response = await handleFase1(parsedData);
-             else if (fase === 2) response = await handleFase2(parsedData);
+            if (fase === 1)    {
+                console.log('fase1')
+                response = await handleFase1(parsedData);
+            }   
+             else if (fase === 2){
+                console.log('fase2')
+                response = await handleFase2(parsedData);
+             } 
             
             const jsonString = JSON.stringify(response);
             socket.broadcast.emit('message', jsonString);
