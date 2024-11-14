@@ -32,8 +32,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-.connection.js
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 /connection.js
+
+node_modules
