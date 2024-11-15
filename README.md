@@ -6,11 +6,11 @@
 
 ## Tecnologías
 
-    Se utilizó **NodeJs**
+    Se utilizó NodeJs
 
 ## Instalación
 
-    Git clone [https://github.com/Levitaxl/sistema-de-colas.git](https://github.com/Levitaxl/backend-proyecto-colas.git)
+    Git clone https://github.com/Levitaxl/backend-proyecto-colas.git
     cd backend-proyecto-colas
     npm i
 
