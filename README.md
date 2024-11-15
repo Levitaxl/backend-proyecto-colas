@@ -21,3 +21,10 @@
 ## Link al despliegue
 
   https://backend-proyecto-colas.onrender.com
+
+
+## Resultado owasp zap
+
+![image](https://github.com/user-attachments/assets/4b266266-f989-411c-9f12-19c6a5539813)
+
+El servidor al solo poder conectarse mediante socket, y no permitir otras conexiónes no genera respuestas al servidor, dando como resultado un Read time out.
